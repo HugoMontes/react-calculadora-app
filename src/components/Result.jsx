@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Result = (props) => {
-    console.log("Valor: ", props)
+const Result = ({ value }) => {
+    console.log("Valor: ", value)
     return (
         <div className="result">
-            <span>0</span>
+            {value}
         </div>
     )
 }
