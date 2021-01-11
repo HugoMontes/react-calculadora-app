@@ -1,5 +1,4 @@
 import React from 'react'
-// Importar los componentes
 import Result from './components/Result'
 
 import './App.css'
@@ -7,7 +6,8 @@ import './App.css'
 const App = () => {
     return (
     <main className='react-calculator'>
-        <Result />        
+        {/* Pasar un parametro como propiedad */} 
+        <Result value={0} />        
         <div className="numbers">
             <button>1</button>
             <button>2</button>
