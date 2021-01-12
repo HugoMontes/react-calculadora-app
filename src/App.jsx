@@ -1,7 +1,8 @@
 import React from 'react'
-import Result from './components/Result'
-// Importar el componente button
 import Button from './components/Button'
+import MathOperations from './components/MathOperations'
+import Result from './components/Result'
+
 
 import './App.css'
 
@@ -31,13 +32,10 @@ const App = () => {
             <button>clear</button>
             <button>r</button>
         </div>
-        <div className="math-operations">
-            <button>+</button>
-            <button>-</button>
-            <button>*</button>
-            <button>/</button>
-            <button>=</button>
-        </div>
+        {/* Adicionar las propiedades enviado las funciones que correspondan */}
+        <MathOperations 
+            onClickOperation = {operation => console.log("Operacion: ", operation)}
+            onClickEqual = {equal => console.log("Equal:", equal)}/>
     </main>)
 }
 
