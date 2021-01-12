@@ -5,16 +5,12 @@ import PropTypes from 'prop-types'
 
 // Componente funcional
 // Componente que muestra un boton
-const Button = ({text, clickHandler}) => {
-    return (
-        <button onClick={ () => {
-            // Invocar a la funcion obtenida enviando text
-            clickHandler(text)
-        }}>
-            <span>{text}</span>
-        </button>
-    )
-}
+const Button = ({text, clickHandler}) => (
+    <button onClick={ () => clickHandler(text) }>
+        <span>{text}</span>
+    </button>
+)
+
 
 // Validar las propiedades
 Button.propTypes = {
