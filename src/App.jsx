@@ -6,8 +6,7 @@ import './App.css'
 const App = () => {
     return (
     <main className='react-calculator'>
-        {/* Pasar un parametro como propiedad */} 
-        <Result value={"0"} />        
+        <Result />        
         <div className="numbers">
             <button>1</button>
             <button>2</button>

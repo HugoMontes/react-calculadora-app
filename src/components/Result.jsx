@@ -19,4 +19,9 @@ Result.propTypes = {
     value: PropTypes.string.isRequired
 }
 
+// Definir valor por defecto
+Result.defaultProps = {
+    value: "0"
+}
+
 export default Result
