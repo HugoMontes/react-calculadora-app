@@ -1,12 +1,13 @@
 // Importar React
 import React from 'react'
-// Importar PropTyptes
 import PropTypes from 'prop-types'
+// Importar el archivo css
+import './Button.css'
 
 // Componente funcional
 // Componente que muestra un boton
-const Button = ({text, clickHandler}) => (
-    <button onClick={ () => clickHandler(text) }>
+const Button = ({type, text, clickHandler}) => (
+    <button className={type} onClick={ () => clickHandler(text) }>
         <span>{text}</span>
     </button>
 )

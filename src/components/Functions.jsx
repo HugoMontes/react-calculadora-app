@@ -8,7 +8,7 @@ import Button from './Button'
 // son manejadores de eventos (Clear, Eliminar caracter)
 const Functions = ({onContentClear, onDelete}) => (
     <section className="functions">
-        <Button text="Clear" clickHandler={onContentClear} />
+        <Button type="button-long-text" text="clear" clickHandler={onContentClear} />
         <Button text="&larr;" clickHandler={onDelete} />
     </section>
 )
