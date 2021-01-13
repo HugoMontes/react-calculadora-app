@@ -1,0 +1,23 @@
+// Importar los componentes
+import React from 'react'
+import PropTypes from 'prop-types'
+import Button from './Button'
+
+// Crear la constante para la funcion
+// Este componente acepta dos parametros los cuales 
+// son manejadores de eventos (Clear, Eliminar caracter)
+const Functions = ({onContentClear, onDelete}) => (
+    <section className="functions">
+        <Button text="Clear" clickHandler={onContentClear} />
+        <Button text="&larr;" clickHandler={onDelete} />
+    </section>
+)
+
+// Validar las propiedades
+Functions.propTypes = {
+    onContentClear: PropTypes.func.isRequired,
+    onDelete: PropTypes.func.isRequired
+}
+
+// Exportar el componente
+export default Functions
