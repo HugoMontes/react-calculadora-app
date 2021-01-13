@@ -1,7 +1,7 @@
 // Importar los componentes
 import React from 'react'
 import PropTypes from 'prop-types'
-import Button from './Button'
+import Button from './Button/Button'
 
 // Crear la constante para la funcion
 // Este componente acepta dos parametros los cuales 
