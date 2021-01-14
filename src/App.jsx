@@ -23,15 +23,29 @@ const App = () => {
             console.log("Click en number", number)
             setStack(`${stack}${number}`)
         }}/>
-        {/* Utilizar el componente Functions adicionando las propiedades 
-            funciones que correspondan */}
         <Functions 
-            onContentClear = {() => console.log("Content Clear")}
-            onDelete = {() => console.log("onDelete")} />
-        {/* Adicionar las propiedades enviado las funciones que correspondan */}
+            onContentClear = {() => {
+                console.log("Content Clear")
+                // Llamar a la funcion setStack para asignarle una cadena vacia
+                setStack('')
+            }}
+            onDelete = {() => {
+                console.log("onDelete")
+                // Eliminar el ultimo caracter 
+                const newStack = stack.substring(0, stack.length - 1)
+                setStack(newStack)
+            }} />
         <MathOperations 
-            onClickOperation = {operation => console.log("Operacion: ", operation)}
-            onClickEqual = {equal => console.log("Equal:", equal)} />
+            onClickOperation = {operation => {
+                console.log("Operacion: ", operation)
+                // Concatenar el operador
+                setStack(`${stack}${operation}`)
+            }}
+            onClickEqual = {equal => {
+                console.log("Equal:", equal)
+                // Concatenar simbolo igual
+                setStack(`${stack}${equal}`)
+            }} />
     </main>)
 }
 
