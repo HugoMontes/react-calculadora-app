@@ -8,25 +8,20 @@ import Result from './components/Result'
 import './App.css'
 
 const App = () => {
-    // Crear una constante el cual es un array 
-    // que contiene una cadena y una funcion
-    // en principio la cadena esta vacia
-    const arrayTextoFuncionModificaTexto = useState("")
-    // Obtener el texto "" y la funcion
-    // 1er posicion: valor (que inicialmente es el valor por defecto)
-    const texto = arrayTextoFuncionModificaTexto[0]
-    // 2da posicion: funcion que me va a permitir modificar el valor por defecto
-    const funcionModificaTexto = arrayTextoFuncionModificaTexto[1]
+    // Array Destructuring
+    // 1er posicion: "stack" valor (que inicialmente es el valor por defecto)
+    // 2da posicion: "setStack" funcion que me va a permitir modificar el valor por defecto
+    const[stack, setStack] = useState("")
     // Mostrar un mensaje que indica la renderizacion de la app
     console.log("Renderizacion de App");
     return (
     <main className='react-calculator'>
         {/* Mostrar el texto obtenido "" */}
-        <Result value={texto} />        
-        {/* Usar funcionModificaTexto enviando el valor a mostrar */}
+        <Result value={stack} />        
+        {/* Usar setStack enviando el valor a mostrar */}
         <Numbers onClickNumber = {number => {
             console.log("Click en number", number)
-            funcionModificaTexto(number)
+            setStack(number)
         }}/>
         {/* Utilizar el componente Functions adicionando las propiedades 
             funciones que correspondan */}
