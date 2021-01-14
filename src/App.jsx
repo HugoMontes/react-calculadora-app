@@ -21,7 +21,7 @@ const App = () => {
         {/* Usar setStack enviando el valor a mostrar */}
         <Numbers onClickNumber = {number => {
             console.log("Click en number", number)
-            setStack(number)
+            setStack(`${stack}${number}`)
         }}/>
         {/* Utilizar el componente Functions adicionando las propiedades 
             funciones que correspondan */}
