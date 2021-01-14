@@ -1,4 +1,4 @@
-// Importar useState usando destructuring
+/* eslint no-eval: 0 */
 import React, { useState } from 'react'
 import Functions from './components/Functions'
 import MathOperations from './components/MathOperations'
@@ -45,8 +45,9 @@ const App = () => {
             }}
             onClickEqual = {equal => {
                 console.log("Equal:", equal)
-                // Concatenar simbolo igual
-                setStack(`${stack}${equal}`)
+                // En lugar de mostrar = mostrar el resultado
+                // eval() permite evaluar la operacion
+                setStack(eval(stack).toString())
             }} />
     </main>)
 }
