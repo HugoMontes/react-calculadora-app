@@ -1,5 +1,5 @@
-import React from 'react'
-/* import Button from './components/Button/Button' */
+// Importar useState usando destructuring
+import React, { useState } from 'react'
 import Functions from './components/Functions'
 import MathOperations from './components/MathOperations'
 import Numbers from './components/Numbers'
@@ -8,17 +8,26 @@ import Result from './components/Result'
 import './App.css'
 
 const App = () => {
-    /*
-    const clickHandlerFunction = text => {
-        console.log("Button.clickHandler", text);
-    }
-    */
+    // Crear una constante el cual es un array 
+    // que contiene una cadena y una funcion
+    // en principio la cadena esta vacia
+    const arrayTextoFuncionModificaTexto = useState("")
+    // Obtener el texto "" y la funcion
+    // 1er posicion: valor (que inicialmente es el valor por defecto)
+    const texto = arrayTextoFuncionModificaTexto[0]
+    // 2da posicion: funcion que me va a permitir modificar el valor por defecto
+    const funcionModificaTexto = arrayTextoFuncionModificaTexto[1]
+    // Mostrar un mensaje que indica la renderizacion de la app
+    console.log("Renderizacion de App");
     return (
     <main className='react-calculator'>
-        <Result />        
-        {/* Utilizar el componente Numbers adicionando la propiedad 
-            onClickNomber el cual muestra un mensaje por consola */}
-        <Numbers onClickNumber = {number => console.log("Click en number", number) }/>
+        {/* Mostrar el texto obtenido "" */}
+        <Result value={texto} />        
+        {/* Usar funcionModificaTexto enviando el valor a mostrar */}
+        <Numbers onClickNumber = {number => {
+            console.log("Click en number", number)
+            funcionModificaTexto(number)
+        }}/>
         {/* Utilizar el componente Functions adicionando las propiedades 
             funciones que correspondan */}
         <Functions 
