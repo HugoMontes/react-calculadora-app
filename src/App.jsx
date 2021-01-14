@@ -30,10 +30,12 @@ const App = () => {
                 setStack('')
             }}
             onDelete = {() => {
-                console.log("onDelete")
-                // Eliminar el ultimo caracter 
-                const newStack = stack.substring(0, stack.length - 1)
-                setStack(newStack)
+                if(stack.length > 0){
+                    console.log("onDelete")
+                    // Eliminar el ultimo caracter 
+                    const newStack = stack.substring(0, stack.length - 1)
+                    setStack(newStack)
+                }
             }} />
         <MathOperations 
             onClickOperation = {operation => {
