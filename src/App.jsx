@@ -1,5 +1,6 @@
 /* eslint no-eval: 0 */
 import React, { useState } from 'react'
+import words from 'lodash.words'
 import Functions from './components/Functions'
 import MathOperations from './components/MathOperations'
 import Numbers from './components/Numbers'
@@ -12,12 +13,16 @@ const App = () => {
     // 1er posicion: "stack" valor (que inicialmente es el valor por defecto)
     // 2da posicion: "setStack" funcion que me va a permitir modificar el valor por defecto
     const[stack, setStack] = useState("")
-    // Mostrar un mensaje que indica la renderizacion de la app
-    console.log("Renderizacion de App");
+
+    // Separar los valores numericos de los operadores
+    const items = words(stack, /[^-^+^*^/]+/g)
+
+    // Mostrar la salida de la funcion
+    console.log("Renderizacion de App ", items)
     return (
     <main className='react-calculator'>
-        {/* Mostrar el texto obtenido "" */}
-        <Result value={stack} />        
+        {/* Mostrar unicamente el ultimo valor numerico ingresado */}
+        <Result value={items[items.length-1]} />        
         {/* Usar setStack enviando el valor a mostrar */}
         <Numbers onClickNumber = {number => {
             console.log("Click en number", number)
