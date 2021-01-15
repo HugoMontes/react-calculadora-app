@@ -17,12 +17,17 @@ const App = () => {
     // Separar los valores numericos de los operadores
     const items = words(stack, /[^-^+^*^/]+/g)
 
-    // Mostrar la salida de la funcion
+    // Obtenemos el ultimo valor ingresado del array
+    // siempre que este array tenga por lo menos un 
+    // valor caso contrario retorna 0
+    const value = items.length > 0 ? items[items.length-1] : "0"
+
+    // Mostrar la salida de la funcion words
     console.log("Renderizacion de App ", items)
     return (
     <main className='react-calculator'>
-        {/* Mostrar unicamente el ultimo valor numerico ingresado */}
-        <Result value={items[items.length-1]} />        
+        {/* Mostrar el valor convertido en cadena */}
+        <Result value={value} />        
         {/* Usar setStack enviando el valor a mostrar */}
         <Numbers onClickNumber = {number => {
             console.log("Click en number", number)
